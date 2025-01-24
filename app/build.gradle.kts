@@ -37,6 +37,13 @@ android {
 
 dependencies {
 
+    //Koin
+    implementation(libs.koin.android)
+    //Retrofit
+    implementation(libs.retrofit)
+    //Kotlin Coroutines
+    implementation(libs.kotlinx.coroutines.core)
+
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)

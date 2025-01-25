@@ -1,5 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <!--    Basic colors    -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="gray1">#222325</color>
+    <color name="gray2">#313234</color>
+    <color name="gray3">#858688</color>
+    <color name="gray4">#9F9F9F</color>
+    <color name="gray5">#DBDBDB</color>
+    <!-- End of basic colors-->
+    <!--Special colors-->
+    <color name="blue">#2B7EFE</color>
+    <color name="dark_blue">#00427D</color>
+    <color name="green">#4CB24E</color>
+    <color name="dark_green">#015905</color>
+    <color name="red">#FF0000</color>
+    <!-- End of Special colors-->
+    <!-- Shadow color-->
+    <color name="shadow">#E60C0C0C</color>
+    <!-- End of Shadow color-->
 </resources>

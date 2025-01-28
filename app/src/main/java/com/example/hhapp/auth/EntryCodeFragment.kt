@@ -1,6 +1,5 @@
-package com.example.hhapp
+package com.example.hhapp.auth
 
-import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -9,6 +8,8 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
+import com.example.hhapp.R
 import com.example.hhapp.databinding.EntryCodeFragmentBinding
 
 /**
@@ -60,9 +61,9 @@ class EntryCodeFragment : Fragment() {
                         // Переход к следующему полю
                         editables[index + 1].requestFocus()
                     }
-                    if (index == editables.size - 1) {
-                        checkAndNavigate()
-                    }
+//                    if (index == editables.size - 1) {
+//                        checkAndNavigate()
+//                    }
                 }
 
                 override fun afterTextChanged(s: Editable?) {}
@@ -83,13 +84,18 @@ class EntryCodeFragment : Fragment() {
         val code3 = binding.codeEditText3.text.toString()
         val code4 = binding.codeEditText4.text.toString()
         if (code1.isNotEmpty() && code2.isNotEmpty() && code3.isNotEmpty() && code4.isNotEmpty()) {
-            val intent = Intent(requireContext(), MainActivity::class.java)
-            startActivity(intent)
+//            val intent = Intent(requireContext(), MainActivity::class.java)
+//            startActivity(intent)
+            findNavController().navigate(R.id.action_entryCodeFragment_to_mainFragment)
         }
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.codeEditText1.clearFocus()
+        binding.codeEditText2.clearFocus()
+        binding.codeEditText3.clearFocus()
+        binding.codeEditText4.clearFocus()
         _binding = null
     }
 }

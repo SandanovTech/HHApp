@@ -1,5 +1,12 @@
 <resources>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="text_label_size_18sp">18sp</dimen>
+    <dimen name="title_1_size_22sp">22sp</dimen>
+    <dimen name="title_2_size_20sp">20sp</dimen>
+    <dimen name="title_3_size_16sp">16sp</dimen>
+    <dimen name="title_4_size_14sp">14sp</dimen>
+    <dimen name="text_size_14sp">14sp</dimen>
+    <dimen name="button_text_size_16sp">16sp</dimen>
+    <dimen name="button_text_size_14sp">14sp</dimen>
     <dimen name="container_view_padding_16dp">16dp</dimen>
+    <dimen name="card_view_corner_8dp">8dp</dimen>
 </resources>

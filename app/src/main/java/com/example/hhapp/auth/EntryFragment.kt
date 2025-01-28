@@ -1,4 +1,4 @@
-package com.example.hhapp
+package com.example.hhapp.auth
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,11 +7,9 @@ import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.hhapp.R
 import com.example.hhapp.databinding.EntryFragmentBinding
 
-/**
- * A simple [Fragment] subclass as the default destination in the navigation.
- */
 class EntryFragment : Fragment() {
 
     private var _binding: EntryFragmentBinding? = null

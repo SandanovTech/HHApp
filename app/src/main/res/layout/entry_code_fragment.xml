@@ -5,14 +5,14 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/container_view_padding_16dp"
-    tools:context=".EntryCodeFragment">
+    tools:context=".auth.EntryCodeFragment">
 
     <TextView
         android:id="@+id/sender_code_to_email_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="@string/sent_code_to_email"
-        android:textSize="@dimen/text_label_size_18sp"
+        android:textSize="@dimen/title_2_size_20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -23,7 +23,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:text="@string/description_code"
-        android:textSize="@dimen/text_label_size_18sp"
+        android:textSize="@dimen/title_3_size_16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sender_code_to_email_label" />
@@ -48,7 +48,7 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textSize="@dimen/text_label_size_18sp" />
+            android:textSize="@dimen/title_3_size_16sp" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/code_edit_text_2"
@@ -59,7 +59,7 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textSize="@dimen/text_label_size_18sp" />
+            android:textSize="@dimen/title_3_size_16sp" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/code_edit_text_3"
@@ -70,7 +70,7 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textSize="@dimen/text_label_size_18sp" />
+            android:textSize="@dimen/title_3_size_16sp" />
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/code_edit_text_4"
@@ -80,7 +80,7 @@
             android:gravity="center"
             android:inputType="number"
             android:maxLength="1"
-            android:textSize="@dimen/text_label_size_18sp" />
+            android:textSize="@dimen/title_3_size_16sp" />
     </LinearLayout>
 
     <Button
@@ -89,7 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:background="@drawable/rounded_btn"
-        android:text="@string/continue_btn"
+        android:text="@string/approuve"
         android:textColor="@color/white"
         app:backgroundTint="@color/blue"
         app:layout_constraintBottom_toBottomOf="parent"

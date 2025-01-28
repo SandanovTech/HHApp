@@ -6,7 +6,7 @@
 
     <fragment
         android:id="@+id/entryFragment"
-        android:name="com.example.hhapp.EntryFragment"
+        android:name="com.example.hhapp.auth.EntryFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/entry_fragment">
 
@@ -16,12 +16,20 @@
     </fragment>
     <fragment
         android:id="@+id/entryCodeFragment"
-        android:name="com.example.hhapp.EntryCodeFragment"
+        android:name="com.example.hhapp.auth.EntryCodeFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/entry_code_fragment">
 
         <action
             android:id="@+id/action_EntryCodeFragment_to_EntryFragment"
             app:destination="@id/entryFragment" />
+        <action
+            android:id="@+id/action_entryCodeFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.hhapp.main.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" />
 </navigation>

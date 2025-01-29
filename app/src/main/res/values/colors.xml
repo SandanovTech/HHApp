@@ -16,6 +16,7 @@
     <color name="green">#4CB24E</color>
     <color name="dark_green">#015905</color>
     <color name="red">#FF0000</color>
+    <color name="transparent">#00FFFFFF</color>
     <!-- End of Special colors-->
     <!-- Shadow color-->
     <color name="shadow">#E60C0C0C</color>

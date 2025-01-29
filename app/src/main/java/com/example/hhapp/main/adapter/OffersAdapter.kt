@@ -4,7 +4,9 @@ import android.graphics.Color
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hhapp.R
 import com.example.hhapp.databinding.OffersBinding
+import com.example.hhapp.main.Offers
 import com.example.hhapp.main.model.ListOffersDTO
 
 class OffersAdapter(
@@ -31,5 +33,13 @@ class OffersAdapter(
         val offer = offersDTO.offers[position]
         holder.title.text = offer.title
         holder.pickUp.text = offer.button?.text
+
+        Offers.fromId(offer.id)?.let { offersEnum ->
+            when (offersEnum) {
+                Offers.NEAR_VACANCIES -> holder.icon.setImageResource(R.drawable.location)
+                Offers.LEVEL_UP_RESUME -> holder.icon.setImageResource(R.drawable.level_up_resume)
+                Offers.TEMPORARY_JOB -> holder.icon.setImageResource(R.drawable.temporary_job)
+            }
+        }
     }
 }

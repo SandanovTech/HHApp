@@ -69,6 +69,7 @@
     <string name="messages">Сообщения</string>
     <string name="feedbacks">Отклики</string>
     <string name="favorite">Избранное</string>
-    <string name="more_n_vacancies">Еще n ваканский</string>
+    <string name="more_n_vacancies">Еще %d ваканский</string>
     <string name="respond">Откликнуться</string>
+    <string name="counter_vacancy">%d Ваканский</string>
 </resources>

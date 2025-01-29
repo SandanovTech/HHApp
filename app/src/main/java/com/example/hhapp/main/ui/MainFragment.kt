@@ -1,12 +1,14 @@
 package com.example.hhapp.main.ui
 
 import android.os.Bundle
+import android.text.TextUtils
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.hhapp.R
 import com.example.hhapp.databinding.FragmentMainBinding
 import com.example.hhapp.main.adapter.OffersAdapter
 import com.example.hhapp.main.adapter.VacanciesAdapter
@@ -33,6 +35,10 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        binding.searchBar.textView.apply {
+            this.ellipsize = TextUtils.TruncateAt.END
+            this.isSingleLine = true
+        }
         viewModel.loadOffers()
         viewModel.loadVacancies()
         viewModel.offers.value?.let {
@@ -40,6 +46,8 @@ class MainFragment : Fragment() {
         }
         viewModel.vacancies.value?.let {
             setupVacancies(it)
+            val size =  it.vacancies.size
+            binding.continueBtn.text = context?.getString(R.string.more_n_vacancies, size)
         }
     }
 

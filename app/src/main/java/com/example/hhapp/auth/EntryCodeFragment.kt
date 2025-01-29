@@ -1,5 +1,6 @@
 package com.example.hhapp.auth
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
@@ -11,6 +12,7 @@ import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import com.example.hhapp.R
 import com.example.hhapp.databinding.EntryCodeFragmentBinding
+import com.example.hhapp.main.ui.MainActivity
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
@@ -84,9 +86,8 @@ class EntryCodeFragment : Fragment() {
         val code3 = binding.codeEditText3.text.toString()
         val code4 = binding.codeEditText4.text.toString()
         if (code1.isNotEmpty() && code2.isNotEmpty() && code3.isNotEmpty() && code4.isNotEmpty()) {
-//            val intent = Intent(requireContext(), MainActivity::class.java)
-//            startActivity(intent)
-            findNavController().navigate(R.id.action_entryCodeFragment_to_mainFragment)
+            val intent = Intent(requireContext(), MainActivity::class.java)
+            startActivity(intent)
         }
     }
 

@@ -13,11 +13,16 @@ import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
 
-private const val LOG_TAG = "VacanciesAdapter"
+class FavoriteVacanciesAdapter(
+    vacanciesDTO: ListVacanciesDTO,
+) : RecyclerView.Adapter<FavoriteVacanciesAdapter.VacanciesViewHolder>() {
 
-class VacanciesAdapter(
-    val vacanciesDTO: ListVacanciesDTO,
-) : RecyclerView.Adapter<VacanciesAdapter.VacanciesViewHolder>() {
+    //    private val favoriteVacancies = vacanciesDTO.vacancies.filter { it.isFavorite }
+    private val favoriteVacancies = mutableListOf<VacanciesDTO>()
+
+    init {
+        updateFavorites(vacanciesDTO)
+    }
 
     inner class VacanciesViewHolder(binding: VacanciesBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -38,11 +43,11 @@ class VacanciesAdapter(
     }
 
     override fun getItemCount(): Int {
-        return vacanciesDTO.vacancies.size
+        return favoriteVacancies.size
     }
 
     override fun onBindViewHolder(holder: VacanciesViewHolder, position: Int) {
-        val vacancy = vacanciesDTO.vacancies[position]
+        val vacancy = favoriteVacancies[position]
         val lookingCounter = vacancy.lookingNumber
         if (lookingCounter != null) {
             holder.lookingLabel.text = holder.itemView.context.getString(
@@ -66,9 +71,8 @@ class VacanciesAdapter(
         } else {
             holder.price.visibility = View.GONE
         }
-        holder.favorite.setImageResource(
-            if (vacancy.isFavorite) R.drawable.heart_active else R.drawable.heart
-        )
+        val newIcon = if (vacancy.isFavorite) R.drawable.heart_active else R.drawable.heart
+        holder.favorite.setImageResource(newIcon)
         holder.favorite.setOnClickListener {
             vacancy.isFavorite = !vacancy.isFavorite
             val newIconClicked =
@@ -88,5 +92,11 @@ class VacanciesAdapter(
             R.string.publication_date,
             outputDateFormat.format(date)
         )
+    }
+
+    fun updateFavorites(vacanciesDTO: ListVacanciesDTO) {
+        favoriteVacancies.clear()
+        favoriteVacancies.addAll(vacanciesDTO.vacancies.filter { it.isFavorite })
+        notifyDataSetChanged()
     }
 }

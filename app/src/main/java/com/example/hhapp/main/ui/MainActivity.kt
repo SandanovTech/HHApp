@@ -4,7 +4,6 @@ import android.os.Bundle
 import android.view.View
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.fragment.findNavController
 import com.example.hhapp.R
@@ -31,10 +30,10 @@ class MainActivity : AppCompatActivity() {
             true
         }
         navHostFragment.findNavController().addOnDestinationChangedListener {_, destination,_ ->
-            if (destination.id == R.id.vacancyDetailsFragment) {
-                binding.bottomMenu.visibility = View.GONE
-            } else {
-                binding.bottomMenu.visibility = View.VISIBLE
+            when (destination.id) {
+                R.id.vacancyDetailsFragment -> binding.bottomMenu.visibility = View.GONE
+                R.id.bottomSheetFragment -> binding.bottomMenu.visibility = View.GONE
+                else -> binding.bottomMenu.visibility = View.VISIBLE
             }
         }
     }

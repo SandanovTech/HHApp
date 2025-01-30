@@ -4,8 +4,9 @@ import android.icu.text.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.NavController
 import androidx.navigation.findNavController
+import androidx.recyclerview.widget.DiffUtil
+import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hhapp.R
 import com.example.hhapp.databinding.VacanciesBinding
@@ -19,7 +20,7 @@ import java.util.Locale
 
 class VacanciesAdapter(
     val vacanciesDTO: ListVacanciesDTO,
-) : RecyclerView.Adapter<VacanciesAdapter.VacanciesViewHolder>() {
+) : ListAdapter<VacanciesDTO,VacanciesAdapter.VacanciesViewHolder>(DiffCallback()) {
 
     inner class VacanciesViewHolder(binding: VacanciesBinding) :
         RecyclerView.ViewHolder(binding.root) {
@@ -108,4 +109,15 @@ class VacanciesAdapter(
             outputDateFormat.format(date)
         )
     }
+}
+
+class DiffCallback : DiffUtil.ItemCallback<VacanciesDTO>() {
+    override fun areItemsTheSame(oldItem: VacanciesDTO, newItem: VacanciesDTO): Boolean {
+        return oldItem.id == newItem.id
+    }
+
+    override fun areContentsTheSame(oldItem: VacanciesDTO, newItem: VacanciesDTO): Boolean {
+        return oldItem.id == newItem.id
+    }
+
 }

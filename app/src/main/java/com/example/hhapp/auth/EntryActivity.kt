@@ -11,7 +11,6 @@ import com.example.hhapp.databinding.ActivityEntryBinding
 
 class EntryActivity : AppCompatActivity() {
 
-    private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityEntryBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,17 +18,5 @@ class EntryActivity : AppCompatActivity() {
 
         binding = ActivityEntryBinding.inflate(layoutInflater)
         setContentView(binding.root)
-//
-//        setSupportActionBar(binding.toolbar)
-//
-//        val navController = findNavController(R.id.nav_host_fragment)
-//        appBarConfiguration = AppBarConfiguration(navController.graph)
-//        setupActionBarWithNavController(navController, appBarConfiguration)
     }
-
-//    override fun onSupportNavigateUp(): Boolean {
-//        val navController = findNavController(R.id.nav_host_fragment)
-//        return navController.navigateUp(appBarConfiguration)
-//                || super.onSupportNavigateUp()
-//    }
 }

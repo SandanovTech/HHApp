@@ -22,7 +22,6 @@ class MoreVacanciesFragment : Fragment() {
     private lateinit var adapterVacancies: VacanciesAdapter
     private lateinit var recyclerViewVacancies: RecyclerView
     private val viewModel: MainViewModel by viewModel()
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
     }
@@ -37,7 +36,6 @@ class MoreVacanciesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-//        val navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_main)
         viewModel.loadVacancies()
         viewModel.vacancies.value?.let {
             setupVacancies(it)

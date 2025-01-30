@@ -11,11 +11,8 @@ import com.example.hhapp.R
 import com.example.hhapp.databinding.EntryFragmentBinding
 
 class EntryFragment : Fragment() {
-
     private var _binding: EntryFragmentBinding? = null
 
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(

@@ -15,7 +15,6 @@ import com.example.hhapp.main.viewmodels.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 class FavoriteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
     private var _binding: FragmentFavoriteBinding? = null
     private val binding get() = _binding!!
     private lateinit var adapter: FavoriteVacanciesAdapter

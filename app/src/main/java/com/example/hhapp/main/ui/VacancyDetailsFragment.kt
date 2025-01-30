@@ -51,6 +51,9 @@ class VacancyDetailsFragment : Fragment() {
                     vacancy.address?.house
                 ).filterNotNull()
                 val questions = vacancy.questions
+                binding.respondBtn.setOnClickListener {
+                    findNavController().navigate(VacancyDetailsFragmentDirections.actionVacancyDetailsFragmentToBottomSheetFragment(vacancy.id.toString()))
+                }
                 if (questions != null) {
                     for (question in questions) {
                         val chip = Chip(requireContext()).apply {

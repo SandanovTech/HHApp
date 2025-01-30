@@ -14,15 +14,9 @@ import com.example.hhapp.R
 import com.example.hhapp.databinding.EntryCodeFragmentBinding
 import com.example.hhapp.main.ui.MainActivity
 
-/**
- * A simple [Fragment] subclass as the second destination in the navigation.
- */
 class EntryCodeFragment : Fragment() {
 
     private var _binding: EntryCodeFragmentBinding? = null
-
-    // This property is only valid between onCreateView and
-    // onDestroyView.
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -60,12 +54,11 @@ class EntryCodeFragment : Fragment() {
 
                 override fun onTextChanged(s: CharSequence?, start: Int, before: Int, count: Int) {
                     if (s?.length == 1 && index < editables.size - 1) {
-                        // Переход к следующему полю
                         editables[index + 1].requestFocus()
                     }
-//                    if (index == editables.size - 1) {
-//                        checkAndNavigate()
-//                    }
+                    if (index == editables.size - 1) {
+                        checkAndNavigate()
+                    }
                 }
 
                 override fun afterTextChanged(s: Editable?) {}

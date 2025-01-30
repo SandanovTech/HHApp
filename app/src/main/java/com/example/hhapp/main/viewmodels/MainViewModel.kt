@@ -19,10 +19,8 @@ class MainViewModel(
     val offers: LiveData<ListOffersDTO> = _offers
     private val _vacancies = MutableLiveData<ListVacanciesDTO>()
     val vacancies: LiveData<ListVacanciesDTO> = _vacancies
-
     private val _vacancyById = MutableLiveData<List<VacanciesDTO>>()
     val vacancyById: LiveData<List<VacanciesDTO>> = _vacancyById
-
      fun loadOffers() {
         viewModelScope.launch {
             val listOffers = offersRepository.loadOffersFromJsonFile()

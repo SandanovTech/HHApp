@@ -7,7 +7,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hhapp.R
@@ -37,7 +36,8 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_main)
+        val navController =
+            Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_main)
         binding.searchBar.textView.apply {
             this.ellipsize = TextUtils.TruncateAt.END
             this.isSingleLine = true
@@ -49,8 +49,9 @@ class MainFragment : Fragment() {
         }
         viewModel.vacancies.value?.let {
             setupVacancies(it)
-            val size =  it.vacancies.size
-            binding.continueBtn.text = resources.getQuantityString(R.plurals.more_n_vacancies,size, size)
+            val size = it.vacancies.size
+            binding.continueBtn.text =
+                resources.getQuantityString(R.plurals.more_n_vacancies, size, size)
         }
         binding.continueBtn.setOnClickListener {
             navController.navigate(R.id.moreVacanciesFragment)

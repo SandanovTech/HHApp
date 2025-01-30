@@ -15,6 +15,9 @@
         <action
             android:id="@+id/action_mainFragment_to_moreVacanciesFragment"
             app:destination="@id/moreVacanciesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_vacancyDetailsFragment"
+            app:destination="@id/vacancyDetailsFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
@@ -25,5 +28,22 @@
         android:id="@+id/moreVacanciesFragment"
         android:name="com.example.hhapp.main.ui.MoreVacanciesFragment"
         android:label="fragment_more_vacancies"
-        tools:layout="@layout/fragment_more_vacancies" />
+        tools:layout="@layout/fragment_more_vacancies" >
+        <argument android:name="vacancyId"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_moreVacanciesFragment_to_vacancyDetailsFragment"
+            app:destination="@id/vacancyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vacancyDetailsFragment"
+        android:name="com.example.hhapp.main.ui.VacancyDetailsFragment"
+        android:label="fragment_vacancy_details"
+        tools:layout="@layout/fragment_vacancy_details">
+        <argument android:name="vacancyId"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_vacancyDetailsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
 </navigation>

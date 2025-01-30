@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.hhapp.R
 import com.example.hhapp.databinding.FragmentFavoriteBinding
 import com.example.hhapp.main.adapter.FavoriteVacanciesAdapter
-import com.example.hhapp.main.adapter.VacanciesAdapter
 import com.example.hhapp.main.model.ListVacanciesDTO
 import com.example.hhapp.main.viewmodels.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
@@ -41,7 +40,8 @@ class FavoriteFragment : Fragment() {
         viewModel.vacancies.value?.let {
             setupVacancies(it)
             val size = it.vacancies.count { it.isFavorite }
-            binding.vacanciesCounterLabel.text = resources.getQuantityString(R.plurals.counter_vacancy, size, size)
+            binding.vacanciesCounterLabel.text =
+                resources.getQuantityString(R.plurals.counter_vacancy, size, size)
         }
     }
 

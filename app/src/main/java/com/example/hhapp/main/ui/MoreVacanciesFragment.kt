@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hhapp.R
@@ -35,6 +37,7 @@ class MoreVacanciesFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+//        val navController = Navigation.findNavController(requireActivity(), R.id.nav_host_fragment_main)
         viewModel.loadVacancies()
         viewModel.vacancies.value?.let {
             setupVacancies(it)

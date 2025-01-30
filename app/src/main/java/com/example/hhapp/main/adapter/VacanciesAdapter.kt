@@ -4,16 +4,18 @@ import android.icu.text.DateFormat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.NavController
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hhapp.R
 import com.example.hhapp.databinding.VacanciesBinding
 import com.example.hhapp.main.model.ListVacanciesDTO
 import com.example.hhapp.main.model.VacanciesDTO
+import com.example.hhapp.main.ui.MainFragmentDirections
+import com.example.hhapp.main.ui.MoreVacanciesFragmentDirections
 import java.text.SimpleDateFormat
 import java.util.Date
 import java.util.Locale
-
-private const val LOG_TAG = "VacanciesAdapter"
 
 class VacanciesAdapter(
     val vacanciesDTO: ListVacanciesDTO,
@@ -30,6 +32,7 @@ class VacanciesAdapter(
         var publicationDate = binding.publicationDate
         var continueBtn = binding.continueBtn
         val favorite = binding.favorite
+        val cardVacancy = binding.cardVacancy
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): VacanciesViewHolder {
@@ -74,6 +77,22 @@ class VacanciesAdapter(
             val newIconClicked =
                 if (vacancy.isFavorite) R.drawable.heart_active else R.drawable.heart
             holder.favorite.setImageResource(newIconClicked)
+        }
+        holder.cardVacancy.setOnClickListener {
+            val navController = it.findNavController()
+            val currentDestination = navController.currentDestination?.id
+            when (currentDestination) {
+                R.id.mainFragment -> {
+                    val action =
+                        MainFragmentDirections.actionMainFragmentToVacancyDetailsFragment(vacancy.id.toString())
+                    navController.navigate(action)
+                }
+                R.id.moreVacanciesFragment -> {
+                    val action =
+                        MoreVacanciesFragmentDirections.actionMoreVacanciesFragmentToVacancyDetailsFragment(vacancy.id.toString())
+                    navController.navigate(action)
+                }
+            }
         }
     }
 

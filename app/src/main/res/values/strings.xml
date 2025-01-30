@@ -79,6 +79,12 @@
 
     <string name="respond">Откликнуться</string>
     <string name="by_correspondence">По соответствию</string>
+    <string name="address">Адрес</string>
+    <string name="your_responsibilities">Ваши задачи</string>
+    <string name="ask_the_employer_questions">Задайте вопросы работадателю</string>
+    <string name="employer_get_vacancy">Он получит его с откликом на вакансию</string>
+    <string name="people_have_already_responded">%d человек уже откликнулись</string>
+    <string name="the_person_is_being_watched_right_now">%d человека смотрят прямо сейчас</string>
     <!--    <string name="counter_vacancy">%d Ваканский</string>-->
     <plurals name="counter_vacancy">
         <item quantity="one">%d вакансия</item>

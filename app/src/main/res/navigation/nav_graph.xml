@@ -6,22 +6,22 @@
 
     <fragment
         android:id="@+id/entryFragment"
-        android:name="com.example.hhapp.FirstFragment"
+        android:name="com.example.hhapp.auth.EntryFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/entry_fragment">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
+            android:id="@+id/action_EntryFragment_to_EntryCodeFragment"
             app:destination="@id/entryCodeFragment" />
     </fragment>
     <fragment
         android:id="@+id/entryCodeFragment"
-        android:name="com.example.hhapp.EntryCodeFragment"
+        android:name="com.example.hhapp.auth.EntryCodeFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/entry_code_fragment">
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
+            android:id="@+id/action_EntryCodeFragment_to_EntryFragment"
             app:destination="@id/entryFragment" />
     </fragment>
 </navigation>

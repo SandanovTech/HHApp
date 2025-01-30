@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.hhapp.main.ui.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_favoriteFragment"
+            app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_moreVacanciesFragment"
+            app:destination="@id/moreVacanciesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_vacancyDetailsFragment"
+            app:destination="@id/vacancyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/favoriteFragment"
+        android:name="com.example.hhapp.main.ui.FavoriteFragment"
+        android:label="fragment_favorite"
+        tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/moreVacanciesFragment"
+        android:name="com.example.hhapp.main.ui.MoreVacanciesFragment"
+        android:label="fragment_more_vacancies"
+        tools:layout="@layout/fragment_more_vacancies" >
+        <argument android:name="vacancyId"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_moreVacanciesFragment_to_vacancyDetailsFragment"
+            app:destination="@id/vacancyDetailsFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/vacancyDetailsFragment"
+        android:name="com.example.hhapp.main.ui.VacancyDetailsFragment"
+        android:label="fragment_vacancy_details"
+        tools:layout="@layout/fragment_vacancy_details">
+        <argument android:name="vacancyId"
+            app:argType="string"/>
+        <action
+            android:id="@+id/action_vacancyDetailsFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_vacancyDetailsFragment_to_bottomSheetFragment"
+            app:destination="@id/bottomSheetFragment" />
+    </fragment>
+    <dialog
+        android:id="@+id/bottomSheetFragment"
+        android:name="com.example.hhapp.main.ui.BottomSheetFragment"
+        android:label="BottomSheetFragment">
+        <argument android:name="vacancyId"
+            app:argType="string"/>
+    </dialog>
+</navigation>

@@ -1,6 +1,8 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.jetbrains.kotlin.android)
+    kotlin("plugin.serialization") version "2.1.0"
+    id("androidx.navigation.safeargs.kotlin")
 }
 
 android {
@@ -36,6 +38,13 @@ android {
     buildFeatures {
         viewBinding = true
     }
+    sourceSets {
+        getByName("main") {
+            assets {
+                srcDirs("src\\main\\assets", "src\\main\\assets")
+            }
+        }
+    }
 }
 
 dependencies {
@@ -46,6 +55,8 @@ dependencies {
     implementation(libs.retrofit)
     //Kotlin Coroutines
     implementation(libs.kotlinx.coroutines.core)
+    //Kotlin Serialization
+    implementation(libs.kotlinx.serialization.json)
 
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)

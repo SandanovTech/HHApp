@@ -51,4 +51,48 @@
     <string name="sent_code_to_email">Отправили код на</string>
     <string name="description_code">Напишите его, чтобы подтвердить, что это вы,а не кто-то другой входит в личный кабинет</string>
     <string name="description">Размещение ваканский и доступ к базе резюме</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="position_keywords">Должность, ключевые слова</string>
+    <string name="jobs_for_you">Вакансии для вас</string>
+    <string name="currently_n_people_are_viewing">Сейчас просматриваию %d человек</string>
+    <string name="vacancy_label">UX|UI дизайнер</string>
+    <string name="city">Минск</string>
+    <string name="company">Компания</string>
+    <string name="experience">Опыт работы</string>
+    <string name="publication_date">Опубликовано %s</string>
+    <string name="approuve">Подтвердить</string>
+    <string name="jobs_near_you">Вакансии рядом с вами</string>
+    <string name="raise">Поднять</string>
+    <string name="search">Поиск</string>
+    <string name="profile">Профиль</string>
+    <string name="messages">Сообщения</string>
+    <string name="feedbacks">Отклики</string>
+    <string name="favorite">Избранное</string>
+    <!--    <string name="more_n_vacancies">Еще %d ваканский</string>-->
+    <plurals name="more_n_vacancies">
+        <item quantity="one">Еще %d вакансия</item>
+        <item quantity="few">Еще %d вакансии</item>
+        <item quantity="many">Еще %d вакансий</item>
+        <item quantity="other">Еще %d вакансий</item>
+    </plurals>
+
+    <string name="respond">Откликнуться</string>
+    <string name="by_correspondence">По соответствию</string>
+    <string name="address">Адрес</string>
+    <string name="your_responsibilities">Ваши задачи</string>
+    <string name="ask_the_employer_questions">Задайте вопросы работадателю</string>
+    <string name="employer_get_vacancy">Он получит его с откликом на вакансию</string>
+    <string name="people_have_already_responded">%d человек уже откликнулись</string>
+    <string name="the_person_is_being_watched_right_now">%d человека смотрят прямо сейчас</string>
+    <string name="add_later">Добавить сопроводительное</string>
+    <string name="enter_later">Введите сопроводительное сообщение</string>
+    <!--    <string name="counter_vacancy">%d Ваканский</string>-->
+    <plurals name="counter_vacancy">
+        <item quantity="one">%d вакансия</item>
+        <item quantity="few">%d вакансии</item>
+        <item quantity="many">%d вакансий</item>
+        <item quantity="other">%d вакансий</item>
+    </plurals>
+
 </resources>

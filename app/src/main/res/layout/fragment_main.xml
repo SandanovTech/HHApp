@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/container_view_padding_16dp"
+    tools:context=".main.ui.MainFragment">
+
+        <com.google.android.material.search.SearchBar
+            android:id="@+id/search_bar"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:backgroundTint="@color/gray2"
+            android:hint="@string/position_keywords"
+            app:layout_constraintBottom_toTopOf="@id/offers"
+            app:layout_constraintTop_toTopOf="parent"
+            app:navigationIcon="@drawable/search"
+            tools:ignore="MissingConstraints" />
+
+        <ImageButton
+            android:id="@+id/filter"
+            android:layout_width="45dp"
+            android:layout_height="55dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/rounded_btn"
+            android:gravity="center"
+            android:src="@drawable/filter"
+            app:backgroundTint="@color/gray2"
+            app:iconSize="36dp"
+            app:iconTint="@color/white"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/offers"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/search_bar" />
+
+        <TextView
+            android:id="@+id/vacancies_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/jobs_for_you"
+            android:textSize="@dimen/title_2_size_20sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/offers" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/vacancies"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/continue_btn"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/vacancies_label" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/continue_btn"
+            style="@style/Widget.Material3.Button.TextButton.Icon"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="120dp"
+            android:background="@drawable/rounded_btn"
+            android:textColor="@color/white"
+            app:backgroundTint="@color/blue"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

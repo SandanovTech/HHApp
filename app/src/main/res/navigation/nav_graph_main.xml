@@ -12,10 +12,18 @@
         <action
             android:id="@+id/action_mainFragment_to_favoriteFragment"
             app:destination="@id/favoriteFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_moreVacanciesFragment"
+            app:destination="@id/moreVacanciesFragment" />
     </fragment>
     <fragment
         android:id="@+id/favoriteFragment"
         android:name="com.example.hhapp.main.ui.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
+    <fragment
+        android:id="@+id/moreVacanciesFragment"
+        android:name="com.example.hhapp.main.ui.MoreVacanciesFragment"
+        android:label="fragment_more_vacancies"
+        tools:layout="@layout/fragment_more_vacancies" />
 </navigation>

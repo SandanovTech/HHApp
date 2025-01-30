@@ -1,26 +1,24 @@
 package com.example.hhapp.main.ui
 
 import android.os.Bundle
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.hhapp.R
-import com.example.hhapp.databinding.FragmentFavoriteBinding
-import com.example.hhapp.main.adapter.FavoriteVacanciesAdapter
+import com.example.hhapp.databinding.FragmentMoreVacanciesBinding
 import com.example.hhapp.main.adapter.VacanciesAdapter
 import com.example.hhapp.main.model.ListVacanciesDTO
 import com.example.hhapp.main.viewmodels.MainViewModel
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
-class FavoriteFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var _binding: FragmentFavoriteBinding? = null
+class MoreVacanciesFragment : Fragment() {
+    private var _binding: FragmentMoreVacanciesBinding? = null
     private val binding get() = _binding!!
-    private lateinit var adapter: FavoriteVacanciesAdapter
-    private lateinit var recyclerViewFavoriteVacancies: RecyclerView
+    private lateinit var adapterVacancies: VacanciesAdapter
+    private lateinit var recyclerViewVacancies: RecyclerView
     private val viewModel: MainViewModel by viewModel()
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,7 +29,7 @@ class FavoriteFragment : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?,
     ): View {
-        _binding = FragmentFavoriteBinding.inflate(layoutInflater, container, false)
+        _binding = FragmentMoreVacanciesBinding.inflate(layoutInflater, container, false)
         return binding.root
     }
 
@@ -40,16 +38,15 @@ class FavoriteFragment : Fragment() {
         viewModel.loadVacancies()
         viewModel.vacancies.value?.let {
             setupVacancies(it)
-            val size = it.vacancies.count { it.isFavorite }
-            binding.vacanciesCounterLabel.text = resources.getQuantityString(R.plurals.counter_vacancy, size, size)
+            val size =  it.vacancies.size
+            binding.vacanciesLabel.text = resources.getQuantityString(R.plurals.more_n_vacancies,size, size)
         }
     }
-
     private fun setupVacancies(vacancies: ListVacanciesDTO) {
-        recyclerViewFavoriteVacancies = binding.favoriteVacancies
-        recyclerViewFavoriteVacancies.layoutManager =
+        recyclerViewVacancies = binding.vacancies
+        recyclerViewVacancies.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
-        adapter = FavoriteVacanciesAdapter(vacancies)
-        recyclerViewFavoriteVacancies.adapter = adapter
+        adapterVacancies = VacanciesAdapter(vacancies)
+        recyclerViewVacancies.adapter = adapterVacancies
     }
 }

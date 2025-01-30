@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="@dimen/container_view_padding_16dp"
-    tools:context=".main.ui.FavoriteFragment">
+    tools:context=".main.ui.FavoriteFragment"
+    android:layout_marginTop="8dp">
 
     <TextView
         android:id="@+id/favorite_label"
@@ -22,7 +23,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/counter_vacancy"
         android:textColor="@color/gray3"
         android:textSize="@dimen/title_2_size_20sp"
         app:layout_constraintStart_toStartOf="parent"
